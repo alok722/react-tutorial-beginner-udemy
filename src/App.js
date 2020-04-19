@@ -8,11 +8,18 @@ class App extends Component {
       {firstName : 'Alok', secondName : 'Harshita'},
       {firstName : 'Harshita', secondName : 'Alok'},
       {firstName : 'A', secondName : 'B'}
-    ]
+    ],
+    otherState: 'Some other values'
   }
 
   switchNameHandler = () => {
-    console.log('Clicked !!!')
+    // console.log('Clicked !!!')
+    // Don't do this: this.state.persons[0].firstName = 'Alok Raj';
+    this.setState({persons : [
+      {firstName : 'Alok Raj', secondName : 'Harshita Kumari'},
+      {firstName : 'Harshita Kumari', secondName : 'Alok Raj'},
+      {firstName : 'AA', secondName : 'BB'}
+    ]}) //This won't affect otherState defined inside state.
   }
 
   render() {

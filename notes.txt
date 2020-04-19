@@ -73,3 +73,7 @@ The method defined inside component in react should not be accessed with () brac
 
 Supported events apart from onClick are: https://reactjs.org/docs/events.html#supported-events
 
+props :: In Person.js 
+state :: In App.js
+
+// It will update DOM if any of these changes
