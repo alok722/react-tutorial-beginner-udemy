@@ -20,6 +20,14 @@ class App extends Component {
     ]}) //This won't affect otherState defined inside state.
   }
 
+  nameChangedHandler = (event) => {
+    this.setState({persons : [
+      {firstName : 'Alok Raj', secondName : 'Harshita Kumari'},
+      {firstName : 'Harshita Kumari', secondName : 'Alok Raj'},
+      {firstName : event.target.value, secondName : 'BB'}
+    ]})
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,6 +43,7 @@ class App extends Component {
           firstName = {this.state.persons[2].firstName} 
           secondName = {this.state.persons[2].secondName}
           click = {this.switchNameHandler.bind(this, 'AA!')}
+          changedEvent = {this.nameChangedHandler}
           >This is a child prop.</Person>
       </div>
     );

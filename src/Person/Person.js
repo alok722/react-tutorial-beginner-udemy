@@ -6,6 +6,7 @@ return (
     <div>
         <p onClick = {props.click}>{props.firstName} loves {props.secondName}</p> 
         <p>{props.children}</p>
+        <input type='text' value = {props.firstName} onChange = {props.changedEvent}/>
     </div>
     )
 }
