@@ -1,3 +1,4 @@
+// It is a functional component
 import React from 'react';
 
 const person = (props) => {
