@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+import person from './Person/Person';
 
 class App extends Component {
   state = {
@@ -35,7 +36,7 @@ class App extends Component {
 
   togglePersonHandler = () => {
     const doesShow = this.state.showPersons;
-    this.setState({showPersons : !doesShow});
+    this.setState({ showPersons: !doesShow });
   }
 
   render() {
@@ -46,29 +47,32 @@ class App extends Component {
       padding: '10px',
       cursor: 'pointer'
     };
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          <Person
+            firstName={this.state.persons[0].firstName}
+            secondName={this.state.persons[0].secondName} />
+          <Person
+            firstName={this.state.persons[1].firstName}
+            secondName={this.state.persons[1].secondName} />
+          <Person
+            firstName={this.state.persons[2].firstName}
+            secondName={this.state.persons[2].secondName}
+            click={this.switchNameHandler.bind(this, 'AA!')}
+            changedEvent={this.nameChangedHandler}
+          >This is a child prop.</Person>
+        </div>
+      );
+    }
     return (
       <div className="App">
         <h1>Hello, There !!!</h1>
         <button style={style}
           onClick={this.togglePersonHandler}>
           Toggle Names</button>
-        {
-          this.state.showPersons ?
-            <div>
-              <Person
-                firstName={this.state.persons[0].firstName}
-                secondName={this.state.persons[0].secondName} />
-              <Person
-                firstName={this.state.persons[1].firstName}
-                secondName={this.state.persons[1].secondName} />
-              <Person
-                firstName={this.state.persons[2].firstName}
-                secondName={this.state.persons[2].secondName}
-                click={this.switchNameHandler.bind(this, 'AA!')}
-                changedEvent={this.nameChangedHandler}
-              >This is a child prop.</Person>
-            </div> : null
-        }
+        {persons}
       </div>
     );
   }
