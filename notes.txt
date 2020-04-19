@@ -68,3 +68,8 @@ Here, the NewPost  component contains state . Only class-based components can de
 state  simply is a property of the component class, you have to call it state  though - the name is not optional. You can then access it via this.state  in your class JSX code (which you return in the required render()  method).
 
 Whenever state  changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props  is, that this happens within one and the same component - you don't receive new data (props ) from outside!
+
+The method defined inside component in react should not be accessed with () bracket, else it will be triggered as soon as the component loads up so , instead directly access with 'this.funcName'.
+
+Supported events apart from onClick are: https://reactjs.org/docs/events.html#supported-events
+
