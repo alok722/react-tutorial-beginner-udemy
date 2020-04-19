@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import person from './Person/Person';
 
 class App extends Component {
   state = {
     persons: [
-      { firstName: 'Alok', secondName: 'Harshita' },
-      { firstName: 'Harshita', secondName: 'Alok' },
-      { firstName: 'A', secondName: 'B' }
+      { name: 'Alok', age: 22 },
+      { name: 'Ashish', age: 20 },
+      { name: 'Ankit', age: 18 }
     ],
     otherState: 'Some other values',
     showPersons: false
@@ -17,9 +16,9 @@ class App extends Component {
   switchNameHandler = (newName) => {
     this.setState({
       persons: [
-        { firstName: 'Alok Raj', secondName: 'Harshita Kumari' },
-        { firstName: 'Harshita Kumari', secondName: 'Alok Raj' },
-        { firstName: newName, secondName: 'BB' }
+        { name: 'Alok Raj', age: 22 },
+        { name: 'Ashish Raj', age: 20 },
+        { name: newName, age: 18 }
       ]
     }) //This won't affect otherState defined inside state.
   }
@@ -27,9 +26,9 @@ class App extends Component {
   nameChangedHandler = (event) => {
     this.setState({
       persons: [
-        { firstName: 'Alok Raj', secondName: 'Harshita Kumari' },
-        { firstName: 'Harshita Kumari', secondName: 'Alok Raj' },
-        { firstName: event.target.value, secondName: 'BB' }
+        { name: 'Alok Raj', age: 22 },
+        { name: 'Ashish Raj', age: 20 },
+        { name: event.target.value, age: 18 }
       ]
     })
   }
@@ -51,18 +50,11 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          <Person
-            firstName={this.state.persons[0].firstName}
-            secondName={this.state.persons[0].secondName} />
-          <Person
-            firstName={this.state.persons[1].firstName}
-            secondName={this.state.persons[1].secondName} />
-          <Person
-            firstName={this.state.persons[2].firstName}
-            secondName={this.state.persons[2].secondName}
-            click={this.switchNameHandler.bind(this, 'AA!')}
-            changedEvent={this.nameChangedHandler}
-          >This is a child prop.</Person>
+          {this.state.persons.map(person => {
+            return <Person 
+              name = {person.name}
+              age = {person.age}/>
+          })}
         </div>
       );
     }
