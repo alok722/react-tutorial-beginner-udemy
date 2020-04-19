@@ -9,6 +9,7 @@ class App extends Component {
         <h1>Hello, There !!!</h1>
         <Person firstName = 'Alok' secondName = 'Harshita'/>
         <Person firstName = 'Harshita' secondName = 'Alok'/>
+        <Person firstName = 'A' secondName = 'B'>This is a child prop.</Person>
       </div>
     );
   }
