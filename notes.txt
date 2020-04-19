@@ -84,3 +84,6 @@ Use of hook override the state previously defined.
 In our code snippet it will override.
 We have to define all values when we are updating,
 Important thing we can have as many as useState in our function
+
+// Stateful :: Container, smart component
+// Stateless :: Presentational, dumb component
