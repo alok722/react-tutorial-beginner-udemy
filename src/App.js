@@ -10,10 +10,12 @@ const app = props => {
       { firstName: 'Harshita', secondName: 'Alok' },
       { firstName: 'A', secondName: 'B' }
     ],
+  });
+  const [otherState, setOtherState] = useState({
     otherState: 'Some other values'
   });
 
-  console.log(personState);
+  console.log(personState, otherState);
 
   const switchNameHandler = () => {
     // console.log('Clicked !!!')
@@ -24,8 +26,7 @@ const app = props => {
         { firstName: 'Harshita Kumari', secondName: 'Alok Raj' },
         { firstName: 'AA', secondName: 'BB' }
       ],
-      otherState: personState.otherState
-    }) //This will affect otherState defined inside state and will override. So, we have to manually take care of other state
+    }) // We can use useState as many as time, so we can define multiple state so it wont affect other state
   }
 
   return (
