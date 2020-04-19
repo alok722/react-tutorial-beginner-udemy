@@ -77,3 +77,10 @@ props :: In Person.js
 state :: In App.js
 
 // It will update DOM if any of these changes
+
+We manipulated state using setState which is only availale in file using Class, it was not available for functional components.
+But with Hooks, now we have option to update state in functional component.
+Use of hook override the state previously defined.
+In our code snippet it will override.
+We have to define all values when we are updating,
+Important thing we can have as many as useState in our function
